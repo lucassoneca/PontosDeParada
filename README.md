@@ -1,6 +1,7 @@
-# pontosdeparada
+# PontosDeParada
 
-A new Flutter project.
+Este projeto tem a finalidade de mostrar uma tela, com todas as paradas de ônibus do DF em uma mapa.
+Foi utilizado o OSM (OpenStreetMap) e foi utilizado também uma API do DFnoPonto, para mostrar no mapa, as paradas
 
 ## Getting Started
 
