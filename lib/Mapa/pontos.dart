@@ -4,9 +4,16 @@ import 'package:latlong2/latlong.dart';
 
 class Paradas {
   final LatLng point;
+  final int sequencial;
+  final sentido;
   final String codDftrans;
 
-  Paradas({required this.point, required this.codDftrans});
+  Paradas({
+        required this.point,
+        required this.sequencial,
+        required this.sentido,
+        required this.codDftrans,
+  });
 
   static Future<List<Paradas>> procurarParadas() async {
     final response = await http.get(Uri.parse(
@@ -24,9 +31,12 @@ class Paradas {
 
   factory Paradas.fromJson(Map<String, dynamic> json) {
     return Paradas(
-      point: LatLng(
-          json['geometry']['coordinates'][1], json['geometry']['coordinates'][0]),
+      point: LatLng(json['geometry']['coordinates'][1],
+                    json['geometry']['coordinates'][0]
+      ),
       codDftrans: json['properties']['codDftrans'],
+      sequencial: json['properties']['sequencial'],
+      sentido: json['properties']['sentido']
     );
   }
 }
